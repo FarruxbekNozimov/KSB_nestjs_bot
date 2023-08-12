@@ -1,0 +1,1 @@
+export const payMsg = `<b>KSB SOFT</b> karta ma'lumotlari:\n\n💳 8600 1204 0343 1631\n👤 Mamadaliyev Hakimjon\n⏳ 03/24\n\n⚠️ To'lov amalga oshirilganidan so'ng to'lov haqidagi chekni operatorga yuboring!\n\n👉 Operator bilan bog'lanish: https://t.me/ksbsoft_operator`;
