@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const PORT = process.env.PORT || 3001;
 
   app.enableCors({
     allowedHeaders: ['content-type'],
@@ -10,7 +11,7 @@ async function bootstrap() {
     credentials: true,
   });
 
-  await app.listen(7000, () => {
+  await app.listen(PORT, () => {
     console.log('server ishga tushdi');
   });
 }

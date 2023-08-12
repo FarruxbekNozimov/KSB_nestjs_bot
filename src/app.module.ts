@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { SequelizeModule } from '@nestjs/sequelize';
 import { TelegrafModule } from 'nestjs-telegraf';
 import { MyBotName } from './app.constants';
 import { AppService } from './app.service';
 import { AppUpdate } from './app.update';
-import { User } from './models/user.model';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -19,23 +17,6 @@ import { User } from './models/user.model';
     }),
     ConfigModule.forRoot({
       envFilePath: `.env`,
-    }),
-    SequelizeModule.forFeature([User]),
-    SequelizeModule.forRoot({
-      dialect: 'postgres',
-      host: process.env.PGHOST,
-      port: Number(process.env.PGPORTE),
-      username: process.env.PGUSER,
-      password: process.env.PGPASSWORD,
-      database: process.env.PGDATABASE,
-      models: [User],
-      autoLoadModels: true,
-      logging: false,
-      dialectOptions: {
-        ssl: {
-          require: 'true',
-        },
-      },
     }),
   ],
 
