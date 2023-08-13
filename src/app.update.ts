@@ -45,4 +45,9 @@ export class AppUpdate {
   async onContact(@Ctx() ctx: Context) {
     return this.appService.onContact(ctx);
   }
+
+  @On('message')
+  async onMessage(@Ctx() ctx: Context) {
+    return this.appService.onMessage(ctx);
+  }
 }
