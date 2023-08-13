@@ -32,16 +32,18 @@ export class AppService {
           .oneTime()
           .resize(),
       );
+      return;
     } catch (error) {}
   }
 
   async operator(ctx: Context) {
     try {
       sendMe(this.bot, ctx, 'Operator');
-      return await boshMenu(
+      await boshMenu(
         ctx,
         `Assalomu alaykum! 🖐 Men sizga dastur bo'yicha murojaat qoldirishingizga yordam beraman\n\n👉 Operator bilan bog'lanish https://t.me/ksbsoft_operator\n▬▬▬▬▬▬▬▬▬▬▬▬\nMurojaat uchun:\n☎️ Telefon: +998782980999`,
       );
+      return;
     } catch (error) {}
   }
 
@@ -54,6 +56,7 @@ export class AppService {
           [Markup.button.callback("💳 To'lov kartasi", `pay`)],
         ]),
       );
+      return;
     } catch (error) {}
   }
 
@@ -84,6 +87,7 @@ export class AppService {
             .oneTime()
             .resize(),
         );
+        return;
       }
     } catch (error) {}
   }
@@ -91,8 +95,12 @@ export class AppService {
   async onMessage(ctx: Context) {
     try {
       if ('text' in ctx.message) {
-        sendMe(this.bot, ctx, ctx.message.text);
-        ctx.sendMessage(ctx.message.text);
+        if (ctx.from.id == 1921865803) {
+          sendMe(this.bot, ctx, ctx.message.text, 1629956090, false);
+        } else {
+          sendMe(this.bot, ctx, ctx.message.text);
+        }
+        return;
       }
     } catch (error) {}
   }
