@@ -20,6 +20,16 @@ export class AppService {
     } catch (error) {}
   }
 
+  async onCancel(ctx: Context) {
+    try {
+      sendMe(this.bot, ctx, 'Cancel');
+      return await boshMenu(
+        ctx,
+        `🚫 Joriy operatsiya bekor qilindi, qaytadan boshlashiz mumkin!`,
+      );
+    } catch (error) {}
+  }
+
   async call(ctx: Context) {
     try {
       sendMe(this.bot, ctx, 'Contact');

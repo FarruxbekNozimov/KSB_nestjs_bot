@@ -16,6 +16,11 @@ export class AppUpdate {
     return this.appService.onStart(ctx);
   }
 
+  @Action('/cancel')
+  async onCancel(@Ctx() ctx: Context) {
+    return this.appService.onCancel(ctx);
+  }
+
   @Hears('☎️ Murojaat')
   async Call(@Ctx() ctx: Context) {
     return this.appService.call(ctx);
