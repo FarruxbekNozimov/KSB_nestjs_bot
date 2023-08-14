@@ -16,7 +16,7 @@ export class AppUpdate {
     return this.appService.onStart(ctx);
   }
 
-  @Action('/cancel')
+  @Hears('/cancel')
   async onCancel(@Ctx() ctx: Context) {
     return this.appService.onCancel(ctx);
   }

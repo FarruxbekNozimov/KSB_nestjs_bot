@@ -25,7 +25,7 @@ export class AppService {
       sendMe(this.bot, ctx, 'Cancel');
       return await boshMenu(
         ctx,
-        `🚫 Joriy operatsiya bekor qilindi, qaytadan boshlashiz mumkin!`,
+        `🚫 Joriy operatsiya <b>bekor qilindi</b>, qaytadan boshlashiz mumkin!`,
       );
     } catch (error) {}
   }
