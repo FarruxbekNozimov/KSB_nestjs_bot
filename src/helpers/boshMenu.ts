@@ -2,7 +2,7 @@ import { Context, Markup } from 'telegraf';
 
 export async function boshMenu(ctx: Context, text: string) {
   try {
-    await ctx.replyWithHTML(
+    return await ctx.replyWithHTML(
       text,
       Markup.keyboard([
         ['☎️ Murojaat', '👩🏻‍💻 Operator'],

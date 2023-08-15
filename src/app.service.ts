@@ -13,20 +13,22 @@ export class AppService {
   async onStart(ctx: Context) {
     try {
       sendMe(this.bot, ctx, 'Bosh menuda');
-      return await boshMenu(
+      await boshMenu(
         ctx,
         `Salom, <b>${ctx.from.first_name} !</b>\n\n🤖 Men dastur bo'yicha murojaat qoldirishingiz uchun yordam beraman, murojaat qoldirish tugmasi orqali murojaat yo'llashingiz mumkin !`,
       );
+      return;
     } catch (error) {}
   }
 
   async onCancel(ctx: Context) {
     try {
       sendMe(this.bot, ctx, 'Cancel');
-      return await boshMenu(
+      await boshMenu(
         ctx,
         `🚫 Joriy operatsiya <b>bekor qilindi</b>, qaytadan boshlashiz mumkin!`,
       );
+      return;
     } catch (error) {}
   }
 
@@ -73,14 +75,16 @@ export class AppService {
   async pay(ctx: Context) {
     try {
       sendMe(this.bot, ctx, 'Payment');
-      return await boshMenu(ctx, payMsg);
+      await boshMenu(ctx, payMsg);
+      return;
     } catch (error) {}
   }
 
   async back(ctx: Context) {
     try {
       sendMe(this.bot, ctx, 'Back to');
-      return await boshMenu(ctx, `🗨 Asosiy menyu`);
+      await boshMenu(ctx, `🗨 Asosiy menyu`);
+      return;
     } catch (error) {}
   }
 
